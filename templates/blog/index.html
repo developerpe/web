@@ -94,15 +94,26 @@
 			</div>
 		</div>
 	</header>
-	<div class='top'>
-      <form action='#' method='post'>
-          {% csrf_token %}
-          <input type='hidden' id='page_num' name='page_num' value='1'>
-          <div class='row'>
-              <p class='col-sm-4 col-md-4 col-lg-4'>Name:<input type='text' id='name' name='search_name'></p>
-         </div>
-      </form>
-  </div>
+
+	<div class="container">
+		<div class="row">
+	        <div class="col-md-6">
+						<form method='post'>
+							{% csrf_token %}
+		            <div id="custom-search-input">
+		                <div class="input-group col-md-12">
+											<input type='hidden' id='page_num' name='page_num' value='1'>
+											<input class="form-control" type="text" placeholder="Buscar..." id='name' name='search_name'>
+		                    <span class="input-group-btn">
+		                        <i class="icon icon-search"></i>
+		                    </span>
+		                </div>
+		            </div>
+						</form>
+	        </div>
+		</div>
+	</div>
+
 	<div id="fh5co-blog" >
 		<div class="container">
 			<div class="columns is-multiline" id="cuerpo">
@@ -126,12 +137,16 @@
 			</div>
 		</div>
 	</div>
-	<div class='pageNums'>
-       <p>Page: </p>
-       {% for page in pages %}
-          <a href='#' value={{page}}>{{page}}</a>
-       {% endfor %}
-   </div>
+
+<nav class="pagination pageNums is-centered " role="navigation" aria-label="pagination">
+  <ul class="pagination-list">
+		{% for page in pages %}
+    <li class="navi">
+			<a href='' class="pagination-link " value={{page}}>{{page}}</a>
+    </li>
+		{% endfor %}
+  </ul>
+</nav>
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-color: black;">
 		<div class="container">

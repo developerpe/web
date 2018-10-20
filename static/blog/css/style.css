@@ -1606,6 +1606,7 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 54px;
   font-size: 18px;
   font-weight: 300;
+  margin-top: 10px;
 }
 .form-control:active, .form-control:focus {
   outline: none;
@@ -1640,4 +1641,25 @@ h1, h2, h3, h4, h5, h6, figure {
   height: 102%;
 }
 
+.navi{
+  margin: 10px;
+}
+
+.search{
+  margin-top: 10px;
+}
+
+#imaginary_container{
+    margin-top:20px; /* Don't copy this */
+}
+
+.stylish-input-group .form-control{
+	border-right:0;
+	box-shadow:0 0 0;
+	border-color:#ccc;
+}
+.stylish-input-group button{
+    border:0;
+    background:transparent;
+}
 /*# sourceMappingURL=style.css.map */
