@@ -1,0 +1,256 @@
+{% load staticfiles %}
+<!DOCTYPE HTML>
+<html>
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>{% block title %}Blog | Developer.pe{% endblock %}</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Blog | Developer.pe" />
+	<meta name="keywords" content="Generales, Tecnología, Programación,Videojuegos,Móvil,Tutoriales" />
+	<meta name="author" content="" />
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+
+
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="{% static 'blog/css/icomoon.css' %}">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
+
+	<!-- Magnific Popup -->
+	<link rel="stylesheet" href="{% static 'blog/css/magnific-popup.css' %}">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="{% static 'blog/css/owl.carousel.min.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/owl.theme.default.min.css' %}">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
+	<link rel="stylesheet" href="{% static 'blog/css/bulma.min.css' %}">
+
+	<!-- Modernizr JS -->
+	<script src="{% static 'blog/js/modernizr-2.6.2.min.js' %}"></script>
+
+
+	<!-- favicons
+	================================================== -->
+	<link rel="shortcut icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
+	<link rel="icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
+
+	</head>
+	<body style="background-color:#eee;">
+
+
+
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation">
+			<div class="top-menu">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-4 col-md-12">
+							<div id="fh5co-logo"><a href="{% url 'home' %}" >DEVELOPER.PE</a></div>
+						</div>
+						<div class="col-lg-8 col-md-12 text-right menu-1">
+							<ul>
+								<li><a href="{% url 'home_blog' %}">Inicio</a></li>
+								<li><a href="{% url 'blog_general' %}">Generales</a></li>
+								<li><a href="{% url 'blog_tutoriales' %}">Tutoriales</a></li>
+								<li><a href="{% url 'blog_programacion' %}">Programación</a></li>
+								<li><a href="{% url 'blog_videojuegos' %}">Videjuegos</a></li>
+								<li><a href="{% url 'blog_tecnologia' %}">Tecnología</a></li>
+								<li><a href="{% url 'blog_movil' %}">Móvil</a></li>
+							</ul>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</nav>
+
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="{% block image %}background-image:url({% static 'blog/images/home-bg.jpg' %});{% endblock %}" data-stellar-background-ratio="0.5">
+		<div class="overlay"></div>
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2 text-center">
+					<div class="display-t">
+						<div class="display-tc animate-box" data-animate-effect="fadeIn">
+							<h1>{% block h1 %}Blog | Developer.pe{% endblock %}</h1>
+							<h2>{% block h2 %}Explora nuestra variedad de Post{% endblock %}</h2>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<div class='top'>
+      <form action='#' method='post'>
+          {% csrf_token %}
+          <input type='hidden' id='page_num' name='page_num' value='1'>
+          <div class='row'>
+              <p class='col-sm-4 col-md-4 col-lg-4'>Name:<input type='text' id='name' name='search_name'></p>
+         </div>
+      </form>
+  </div>
+	<div id="fh5co-blog" >
+		<div class="container">
+			<div class="columns is-multiline" id="cuerpo">
+				{% if post %}
+				{% for p in post %}
+				{% csrf_token %}
+				<div class="column is-one-third" >
+					<div class="fh5co-blog animate-box" id="cambio">
+							<a href="{% url 'detail_post' p.id %}" class="pagination-helper"><img class="img-rounded img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
+							<div class="blog-text">
+								<h3><a href="{% url 'detail_post' p.id %}" class="pagination-helper">{{ p.titulo }}</a></h3>
+								<span class="posted_on">{{ p.fecha_creacion }}</span>
+								<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+								<p>{{ p.description }}</p>
+								<a href="{% url 'detail_post' p.id %}" class="btn btn-primary leer_mas is-half">Leer más</a>
+							</div>
+					</div>
+				</div>
+				{% endfor %}
+				{% endif %}
+			</div>
+		</div>
+	</div>
+	<div class='pageNums'>
+       <p>Page: </p>
+       {% for page in pages %}
+          <a href='#' value={{page}}>{{page}}</a>
+       {% endfor %}
+   </div>
+
+	<footer id="fh5co-footer" role="contentinfo" style="background-color: black;">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
+					<h4>DEVELOPER.PE</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="{% url 'home' %}">Inicio</a></li>
+						<li><a href="{% url 'home' %}">Acerca de</a></li>
+						<li><a href="{% url 'home' %}">Descubre</a></li>
+						<li><a href="{% url 'home_blog' %}">Blog</a></li>
+						<li><a href="{% url 'home' %}">Contacto</a></li>
+						<li><a href="{% url 'home' %}">Suscribete</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
+					<h4>Blog</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="{% url 'blog_movil' %}">Móvil</a></li>
+						<li><a href="{% url 'blog_tutoriales' %}">Tutoriales</a></li>
+						<li><a href="{% url 'blog_general' %}">Generales</a></li>
+						<li><a href="{% url 'blog_tecnologia' %}">Tecnología</a></li>
+						<li><a href="{% url 'blog_videojuegos' %}">Videjuegos</a></li>
+						<li><a href="{% url 'blog_programacion' %}">Programación</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
+					<h4>Video Tutoriales</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="#">Variados</a></li>
+						<li><a href="#">Frontend</a></li>
+						<li><a href="#">Backend</a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
+					<h4>Legal</h4>
+					<ul class="fh5co-footer-links">
+						<li><a href="#">Find Designers</a></li>
+						<li><a href="#">Find Developers</a></li>
+						<li><a href="#">Teams</a></li>
+						<li><a href="#">Advertise</a></li>
+						<li><a href="#">API</a></li>
+					</ul>
+				</div>
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+					<p>
+						<small class="block">&copy; 2018 All Rights Reserved by Developer.pe</small>
+					</p>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://twitter.com/Developerpepiur?lang=es"><i class="icon-twitter"></i></a></li>
+							<li><a href="https://www.facebook.com/developerper/"><i class="icon-facebook"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ"><i class="icon-youtube"></i></a></li>
+						</ul>
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="{% static 'blog/js/jquery.min.js' %}"></script>
+	<!-- jQuery Easing -->
+	<script src="{% static 'blog/js/jquery.easing.1.3.js' %}"></script>
+	<!-- Bootstrap -->
+	<script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+	<!-- Waypoints -->
+	<script src="{% static 'blog/js/jquery.waypoints.min.js' %}"></script>
+	<!-- Stellar Parallax -->
+	<script src="{% static 'blog/js/jquery.stellar.min.js' %}"></script>
+	<!-- Carousel -->
+	<script src="{% static 'blog/js/owl.carousel.min.js' %}"></script>
+	<!-- countTo -->
+	<script src="{% static 'blog/js/jquery.countTo.js' %}"></script>
+	<!-- Magnific Popup -->
+	<script src="{% static 'blog/js/jquery.magnific-popup.min.js' %}"></script>
+	<script src="{% static 'blog/js/magnific-popup-options.js' %}"></script>
+	<!-- Main -->
+	<script src="{% static 'blog/js/main.js' %}"></script>
+	<script src="{% static 'web/js/DjangoAjax.js' %}"></script>
+	<script>
+			 function update(){
+					 $.ajax({
+							 method:'POST',
+							 url:'/blog/prueba/',
+							 data:$('form').serialize()
+					 })
+					 .done(function(response){
+							  $('#cuerpo').html(response)
+					 })
+					 return false
+			 }
+			 $(document).ready(function(){
+					 $('#name').keyup(function(){
+							 update();
+							 return false;
+					 })
+					 $('form').submit(function(){
+							 update();
+							 return false;
+					 })
+					 $('.pageNums a').click(function(){
+							 $('#page_num').attr('value', $(this).attr('value'));
+							 update();
+							 return false;
+					 })
+			 });
+	 </script>
+	</body>
+</html>

@@ -1,0 +1,17 @@
+{% if post %}
+{% for p in post %}
+{% csrf_token %}
+<div class="column is-one-third" >
+  <div class="fh5co-blog animate-box" id="cambio">
+      <a href="{% url 'detail_post' p.id %}" class="pagination-helper"><img class="img-rounded img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
+      <div class="blog-text">
+        <h3><a href="{% url 'detail_post' p.id %}" class="pagination-helper">{{ p.titulo }}</a></h3>
+        <span class="posted_on">{{ p.fecha_creacion }}</span>
+        <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+        <p>{{ p.description }}</p>
+        <a href="{% url 'detail_post' p.id %}" class="btn btn-primary leer_mas is-half">Leer más</a>
+      </div>
+  </div>
+</div>
+{% endfor %}
+{% endif %}

@@ -1,0 +1,117 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html lang="es" >
+<head>
+  <meta charset="UTF-8">
+  <title>Inicio de Sesión</title>
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700|Raleway:300,600" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel='stylesheet prefetch' href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.3.7/css/bootstrap.min.css'>
+  <link rel="stylesheet" href="{% static 'login/css/style.css' %}">
+  <link rel="shortcut icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
+  <link rel="icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
+</head>
+<body>
+  <div class="container">
+     <section id="formHolder">
+        <div class="row">
+           <div class="col-sm-6 brand">
+             <a href="{% url 'home' %}" class="logo">Developer.pe</a>
+              <div class="heading">
+                 <h2>Bienvenido</h2>
+                 <p>Ingrese sus datos</p>
+              </div>
+
+              <div class="success-msg">
+                 <p id="message"></p>
+                 <a href="" class="profile" id="opcion"></a>
+              </div>
+           </div>
+
+           <div class="col-sm-6 form">
+              <div class="login form-peice ">
+                 <form class="login-form"  method="post">
+                   {% csrf_token %}
+                    <div class="form-group">
+                       <label for="loginemail">Nombre de Usuario</label>
+                       <input type="text" name="username" id="loginemail" required>
+                    </div>
+
+                    <div class="form-group">
+                       <label for="loginPassword">Contraseña</label>
+                       <input type="password" name="password" id="loginPassword" required>
+                    </div>
+
+                    <div class="CTA">
+                       <input type="submit" value="iniciar sesión">
+                       <a href="" class="switch">Soy nuevo</a>
+                    </div>
+                 </form>
+              </div>
+
+              <div class="signup form-peice switched">
+                 <form class="signup-form"  method="post" id="registro">
+                   {% csrf_token %}
+                    <div class="form-group">
+                       <label for="name">Nombre de usuario</label>
+                       <input type="text" name="username" id="name" class="name">
+                       <span class="error"></span>
+                    </div>
+
+                    <div class="form-group">
+                       <label for="email">Correo electrónico</label>
+                       <input type="email" name="email" id="email" class="email">
+                       <span class="error"></span>
+                    </div>
+
+                    <div class="form-group">
+                       <label for="phone">Nombres</label>
+                       <input type="text" name="first_name" id="phone">
+                    </div>
+
+                    <div class="form-group">
+                       <label for="password">Apellidos</label>
+                       <input type="text" name="last_name" id="password" class="pass">
+                       <span class="error"></span>
+                    </div>
+
+                    <div class="CTA">
+                       <input type="submit" value="Registrarse" id="submit">
+                       <a href="" class="switch">Tengo una cuenta</a>
+                    </div>
+                 </form>
+              </div>
+           </div>
+        </div>
+     </section>
+  </div>
+  <script src="{% static 'blog/js/bootstrap.min.js' %}"></script>
+  <script src="{% static 'blog/js/jquery.min.js' %}"></script>
+  <script  src="{% static 'login/js/index.js' %}"></script>
+  <script src="{% static 'web/js/DjangoAjax.js' %}"></script>
+  <script type="text/javascript">
+      $('#registro').submit(function(event){
+          event.preventDefault();
+          $.ajax({
+              url: '/crear_usuario/',
+              type: 'POST',
+              data: $('#registro').serialize(),
+              success: function(response){
+                if (response != "Success") {
+                  $('#message').fadeIn(5000,function(){
+                      document.getElementById('message').innerHTML = 'El nombre de usuario ya existe :/';
+                      document.getElementById('opcion').innerHTML = 'Volver a intentar';
+                  });
+                }else {
+                  $('#message').fadeIn(5000,function(){
+                      document.getElementById('message').innerHTML = 'Usuario creado con éxito! Espera un email de confirmación :D';
+                      document.getElementById('opcion').innerHTML = 'Volver al inicio';
+                  });
+                }
+              }
+          });
+
+      });
+  </script>
+</body>
+</html>
