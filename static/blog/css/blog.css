@@ -1,20 +1,3 @@
-/*!
-
- =========================================================
- * Material Kit - v2.0.4
- =========================================================
-
- * Product Page: https://www.creative-tim.com/product/material-kit
- * Copyright 2018 Creative Tim (http://www.creative-tim.com)
-
- =========================================================
-
- * The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
-
- */
-
-/*     brand Colors              */
-
 .carousel.carousel-full-nagivation .left {
   cursor: url("../../img/arrow-left.png"), url("../../img/arrow-left.cur"), default !important;
 }
@@ -17296,7 +17279,7 @@ footer .pull-center {
 }
 
 .profile-page .profile .name {
-  margin-top: -80px;
+  /*margin-top: -80px;*/
 }
 
 .profile-page .follow {
@@ -17904,6 +17887,10 @@ footer .pull-center {
   .card-profile .card-header-image {
     max-height: 215px;
   }
+}
+
+.contenido{
+  margin-top: 20px;
 }
 
 /*# sourceMappingURL=kit-free.css.map */
