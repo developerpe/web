@@ -8,6 +8,29 @@
   <meta content='width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no' name='viewport' />
   <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-MG9TQXG');</script>
+  <!-- End Google Tag Manager -->
+
+  <meta name="twitter:card" content="Developer.pe">
+  <meta name="twitter:site" content="@developerpepiur">
+  <meta name="twitter:title" content="Developer.pe">
+  <meta name="twitter:description" content="{{ post_detail.description }}">
+  <meta name="twitter:creator" content="@developerpepiur">
+  <meta name="twitter:image" content="{% static 'web/favicon.ico' %}">
+
+  <meta property="og:title" content="Developer.pe" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="{% url 'home' %}" />
+  <meta property="og:image" content="{% static 'web/favicon.ico' %}"/>
+  <meta property="og:description" content="{{ post_detail.description }}" />
+  <meta property="og:site_name" content="Developer.pe" />
+
   <link rel="stylesheet" href="{% static 'blog/css/animate.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/icomoon.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
@@ -23,6 +46,10 @@
 </head>
 
 <body class="profile-page sidebar-collapse">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG9TQXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
   	<div id="page">
   		<nav class="fh5co-nav" role="navigation">
   			<div class="top-menu">

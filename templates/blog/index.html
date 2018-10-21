@@ -1,24 +1,41 @@
 {% load staticfiles %}
 <!DOCTYPE HTML>
-<html>
+<html lang="es">
 	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{% block title %}Blog | Developer.pe{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta name="description" content="Blog | Developer.pe" />
-	<meta name="keywords" content="Generales, Tecnología, Programación,Videojuegos,Móvil,Tutoriales" />
-	<meta name="author" content="" />
-	<meta property="og:title" content=""/>
-	<meta property="og:image" content=""/>
-	<meta property="og:url" content=""/>
-	<meta property="og:site_name" content=""/>
-	<meta property="og:description" content=""/>
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
+	<meta name="keywords" content="Generales, Tecnología, Programación, Videojuegos, Móvil, Tutoriales" />
+	<meta name="author" content="Developer.pe" />
 	<link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,500,700,800" rel="stylesheet">
+	<meta itemprop="name" content="Developer.pe">
+	<meta itemprop="description" content="Explora nuestra variedad de post">
+	<meta itemprop="image" content="{% static 'web/favicon.ico' %}">
+
+	<!-- Google Tag Manager -->
+	<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+	new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+	j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+	'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+	})(window,document,'script','dataLayer','GTM-MG9TQXG');</script>
+	<!-- End Google Tag Manager -->
+
+	<meta name="twitter:card" content="Developer.pe">
+	<meta name="twitter:site" content="@developerpepiur">
+	<meta name="twitter:title" content="Blog | Developer.pe">
+	<meta name="twitter:description" content="Explora nuestra variedad de post">
+	<meta name="twitter:creator" content="@developerpepiur">
+	<meta name="twitter:image" content="{% static 'web/favicon.ico' %}">
+
+	<meta property="og:title" content="Blog | Developer.pe" />
+	<meta property="og:type" content="article" />
+	<meta property="og:url" content="{% url 'home_blog' %}" />
+	<meta property="og:image" content="{% static 'web/favicon.ico' %}"/>
+	<meta property="og:description" content="Explora nuestra variedad de post" />
+	<meta property="og:site_name" content="Developer.pe" />
+
 	<link rel="stylesheet" href="{% static 'blog/css/icomoon.css' %}">
 	<link rel="stylesheet" href="{% static 'blog/css/bootstrap.css' %}">
 	<link rel="stylesheet" href="{% static 'blog/css/magnific-popup.css' %}">
@@ -31,6 +48,10 @@
 	<link rel="icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
 	</head>
 	<body style="background-color:#eee;">
+		<!-- Google Tag Manager (noscript) -->
+		<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG9TQXG"
+		height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+		<!-- End Google Tag Manager (noscript) -->
 	<div id="page">
 		<nav class="fh5co-nav" role="navigation">
 			<div class="top-menu">

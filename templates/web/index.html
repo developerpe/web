@@ -2,48 +2,62 @@
 <!DOCTYPE html>
 <html class="no-js" lang="es">
 <head>
+
     <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Developer.pe</title>
-    <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="description" content="Programar es para todos y para todo">
+    <meta name="author" content="Developer.pe">
+    <meta name="keywords" content="Inicio, Acerca de, Descubre, Blog, Contacto, Suscríbete" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- CSS
-    ================================================== -->
+
+
+    <meta name="twitter:card" content="Developer.pe">
+  	<meta name="twitter:site" content="@developerpepiur">
+  	<meta name="twitter:title" content="Developer.pe">
+  	<meta name="twitter:description" content="Programar es para todos y para todo">
+  	<meta name="twitter:creator" content="@developerpepiur">
+  	<meta name="twitter:image" content="{% static 'web/favicon.ico' %}">
+
+  	<meta property="og:title" content="Developer.pe" />
+  	<meta property="og:type" content="article" />
+  	<meta property="og:url" content="{% url 'home' %}" />
+  	<meta property="og:image" content="{% static 'web/favicon.ico' %}"/>
+  	<meta property="og:description" content="Programar es para todos y para todo" />
+  	<meta property="og:site_name" content="Developer.pe" />
+
     <link rel="stylesheet" href="{% static 'web/css/base.css' %}">
     <link rel="stylesheet" href="{% static 'web/css/vendor.css' %}">
     <link rel="stylesheet" href="{% static 'web/css/main.css' %}">
-
-    <!-- script
-    ================================================== -->
     <script src="{% static 'web/js/modernizr.js' %}"></script>
-
-    <!-- favicons
-    ================================================== -->
     <link rel="shortcut icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
     <link rel="icon" href="{% static 'web/favicon.ico' %}" type="image/x-icon">
-
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MG9TQXG');</script>
+    <!-- End Google Tag Manager -->
 </head>
 
 <body id="top">
+  <!-- Google Tag Manager (noscript) -->
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MG9TQXG"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <!-- End Google Tag Manager (noscript) -->
 
-    <!-- header
-    ================================================== -->
     <header class="s-header">
-
         <div class="header-logo">
             <a class="site-logo" href="{% url 'home' %}">
                 <h8 class = "logo_font">DEVELOPER.PE</h8>
             </a>
         </div>
-
         <nav class="header-nav">
-
             <a href="#0" class="header-nav__close" title="close"><span>Cerrar</span></a>
-
             <div class="header-nav__content">
                 <h3>Navegación</h3>
-
                 <ul class="header-nav__list">
                     <li class="current"><a class="smoothscroll"  href="#home" title="home">Inicio</a></li>
                     <li><a class="smoothscroll"  href="#about" title="about">Acerca de</a></li>
@@ -52,9 +66,7 @@
                     <li><a class="smoothscroll"  href="#contact" title="contacto">Contacto</a></li>
                     <li><a class="smoothscroll"  href="#suscribete" title="suscribete">Suscribete</a></li>
                 </ul>
-
                 <p>Somos la primera generación que es capaz de tener una idea, verla en nuestras manos,ser capaces de pulsar un botón y ponerlo en manos de millones de personas -  <a href='#0'>Drew Houston</a></p>
-
                 <ul class="header-nav__social">
                     <li>
                         <a href="https://www.facebook.com/developerper/" target="_blank"><i class="fa fa-facebook"></i></a>
@@ -69,38 +81,25 @@
                         <a href="{% url 'home_blog' %}" target="_blank"><i class="fa fa-dribbble"></i></a>
                     </li>
                 </ul>
-
-            </div> <!-- end header-nav__content -->
-
-        </nav>  <!-- end header-nav -->
-
+            </div>
+        </nav>
         <a class="header-menu-toggle" href="#0">
             <span class="header-menu-text">Menu</span>
             <span class="header-menu-icon"></span>
         </a>
+    </header>
 
-    </header> <!-- end s-header -->
-
-
-    <!-- home
-    ================================================== -->
     <section id="home" class="s-home target-section" data-parallax="scroll" data-image-src="{% static 'web/images/header.jpg' %}" data-natural-width=3000 data-natural-height=2000 data-position-y=center>
-
         <div class="overlay"></div>
         <div class="shadow-overlay"></div>
-
         <div class="home-content">
-
             <div class="row home-content__main">
-
                 <h3>Bienvenido a Developer.pe</h3>
-
                 <h1 align="center">
                     {% for query in queryset %}
                     "{{ query.slogan }}"
                     {% endfor %}
                 </h1>
-
                 <div class="home-content__buttons">
                     <a href="#about" class="smoothscroll btn btn--stroke">
                         Empieza ahora!
@@ -109,20 +108,14 @@
                         Contáctanos.
                     </a>
                 </div>
-
             </div>
-
             <div class="home-content__scroll">
                 <a href="#about" class="scroll-link smoothscroll">
                     <span>Navegar</span>
                 </a>
             </div>
-
             <div class="home-content__line"></div>
-
-        </div> <!-- end home-content -->
-
-
+        </div>
         <ul class="home-social">
             <li>
                 <a href="https://www.facebook.com/developerper/" target="_blank"><i class="fa fa-facebook" aria-hidden="true"></i><span>Facebook</span></a>
@@ -137,22 +130,15 @@
                 <a href="{% url 'home_blog' %}"><i class="fa fa-dribbble" aria-hidden="true" target="_blank"></i><span>Blog</span></a>
             </li>
         </ul>
-        <!-- end home-social -->
+    </section>
 
-    </section> <!-- end s-home -->
-
-
-    <!-- about
-    ================================================== -->
     <section id='about' class="s-about">
-
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead subhead--dark">Hola!</h3>
                 <h1 class="display-1 display-1--light">Somos Developer.pe</h1>
             </div>
-        </div> <!-- end section-header -->
-
+        </div>
         <div class="row about-desc" data-aos="fade-up">
             <div class="col-full">
                 <p>
@@ -161,16 +147,10 @@
                 {% endfor %}
                 </p>
             </div>
-        </div> <!-- end about-desc -->
+        </div>
+    </section>
 
-
-    </section> <!-- end s-about -->
-
-
-    <!-- services
-    ================================================== -->
     <section id='services' class="s-services">
-
         <div class="row section-header has-bottom-sep" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">Descubre</h3>
@@ -180,10 +160,8 @@
                     {% endfor %}
                 </h1>
             </div>
-        </div> <!-- end section-header -->
-
+        </div>
         <div class="row services-list block-1-2 block-tab-full">
-
             <div class="col-block service-item" data-aos="fade-up">
                 <div class="service-icon">
                     <i class="icon-paint-brush"></i>
@@ -194,7 +172,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="col-block service-item" data-aos="fade-up">
                 <div class="service-icon">
                     <i class="icon-group"></i>
@@ -205,7 +182,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="col-block service-item" data-aos="fade-up">
                 <div class="service-icon">
                     <i class="icon-megaphone"></i>
@@ -216,7 +192,6 @@
                     </p>
                 </div>
             </div>
-
             <div class="col-block service-item" data-aos="fade-up">
                 <div class="service-icon">
                     <i class="icon-earth"></i>
@@ -227,41 +202,28 @@
                     </p>
                 </div>
             </div>
-
-        </div> <!-- end services-list -->
-
-    </section> <!-- end s-services -->
-
-
-    <!-- works
-    ================================================== -->
+        </div>
+    </section>
     <section id='blog' class="s-works">
-
         <div class="intro-wrap">
-
             <div class="row section-header has-bottom-sep light-sep" data-aos="fade-up">
                 <div class="col-full">
                     <h3 class="subhead">Visita nuestro blog!</h3>
                     <h1 class="display-2 display-2--light">Post pensados en ti.</h1>
                 </div>
-            </div> <!-- end section-header -->
-
-        </div> <!-- end intro-wrap -->
-
+            </div>
+        </div>
         <div class="row works-content">
             <div class="col-full masonry-wrap">
                 <div class="masonry">
-
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
-
                             <div class="item-folio__thumb">
                                 <a href="{% url 'blog_tecnologia' %}"  data-size="1050x700">
                                     <img src="{% static 'web/images/portfolio/tecnologia2.jpg' %}"
                                          srcset="{% static 'web/images/portfolio/tecnologia2.jpg' %} 1x, {% static 'web/images/portfolio/tecnologia2.jpg' %} 2x" alt="">
                                 </a>
                             </div>
-
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
                                     Tecnología
@@ -270,24 +232,19 @@
                                     Descubre lo nuevo día a día
                                 </p>
                             </div>
-
                             <a href="{% url 'blog_tecnologia' %}" class="item-folio__project-link" title="Tecnología">
                                 <i class="icon-link"></i>
                             </a>
-
                         </div>
-                    </div> <!-- end masonry__brick -->
-
+                    </div>
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
-
                             <div class="item-folio__thumb">
                                 <a href="{% url 'blog_programacion' %}" class="thumb-link"  data-size="1050x700">
                                     <img src="{% static 'web/images/portfolio/programacion.jpg' %}"
                                          srcset="{% static 'web/images/portfolio/programacion.jpg' %} 1x, {% static 'web/images/portfolio/programacion.jpg' %} 2x" alt="">
                                 </a>
                             </div>
-
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
                                     Programación
@@ -296,25 +253,19 @@
                                     Entérate lo nuevo
                                 </p>
                             </div>
-
                             <a href="{% url 'blog_programacion' %}" class="item-folio__project-link" title="Programación">
                                 <i class="icon-link"></i>
                             </a>
-
-
                         </div>
-                    </div> <!-- end masonry__brick -->
-
+                    </div>
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
-
                             <div class="item-folio__thumb">
                                 <a href="{% url 'blog_videojuegos' %}" class="thumb-link" data-size="1050x700">
                                     <img src="{% static 'web/images/portfolio/videojuegos.png' %}"
                                          srcset="{% static 'web/images/portfolio/videojuegos.png' %} 1x, {% static 'web/images/portfolio/videojuegos.png' %} 2x" alt="">
                                 </a>
                             </div>
-
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
                                     Videjuegos
@@ -323,24 +274,19 @@
                                     Entérate de cada lanzamiento
                                 </p>
                             </div>
-
                             <a href="{% url 'blog_videojuegos' %}" class="item-folio__project-link" title="Videjuegos">
                                 <i class="icon-link"></i>
                             </a>
-
                         </div>
-                    </div> <!-- end masonry__brick -->
-
+                    </div>
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
-
                             <div class="item-folio__thumb">
                                 <a href="{% url 'blog_movil' %}" class="thumb-link"  data-size="1050x700">
                                     <img src="{% static 'web/images/portfolio/movil.jpg' %}"
                                          srcset="{% static 'web/images/portfolio/movil.jpg' %} 1x, {% static 'web/images/portfolio/movil.jpg' %} 2x" alt="">
                                 </a>
                             </div>
-
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
                                     Móvil
@@ -349,25 +295,19 @@
                                     Novedades del mundo de los Smartphones
                                 </p>
                             </div>
-
                             <a href="{% url 'blog_movil' %}" class="item-folio__project-link" title="Movil">
                                 <i class="icon-link"></i>
                             </a>
-
-
                         </div>
-                    </div> <!-- end masonry__brick -->
-
+                    </div>
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
-
                             <div class="item-folio__thumb">
                                 <a href="{% url 'blog_general' %}" class="thumb-link" data-size="1050x700">
                                     <img src="{% static 'web/images/portfolio/generales.jpg' %}"
                                          srcset="{% static 'web/images/portfolio/generales.jpg' %} 1x, {% static 'web/images/portfolio/generales.jpg' %} 2x" alt="">
                                 </a>
                             </div>
-
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
                                     Generales
@@ -376,24 +316,19 @@
                                     Contenido variado
                                 </p>
                             </div>
-
                             <a href="{% url 'blog_general' %}" class="item-folio__project-link" title="Generales">
                                 <i class="icon-link"></i>
                             </a>
-
                         </div>
-                    </div> <!-- end masonry__brick -->
-
+                    </div>
                     <div class="masonry__brick" data-aos="fade-up">
                         <div class="item-folio">
-
                             <div class="item-folio__thumb">
-                                <a href="{% static 'web/images/portfolio/gallery/tutoriales.jpg' %}" class="thumb-link" title="Palmeira" data-size="1050x700">
+                                <a href="{% url 'blog_tutoriales' %}" class="thumb-link" title="Palmeira" data-size="1050x700">
                                     <img src="{% static 'web/images/portfolio/tutoriales.jpg' %}"
                                          srcset="{% static 'web/images/portfolio/tutoriales.jpg' %} 1x, {% static 'web/images/portfolio/tutoriales.jpg' %} 2x" alt="">
                                 </a>
                             </div>
-
                             <div class="item-folio__text">
                                 <h3 class="item-folio__title">
                                     Tutoriales
@@ -402,80 +337,58 @@
                                     Descubre tutoriales para el día a día
                                 </p>
                             </div>
-
-                            <a href="https://www.behance.net/" class="item-folio__project-link" title="Project link">
+                            <a href="{% url 'blog_tutoriales' %}" class="item-folio__project-link" title="Project link">
                                 <i class="icon-link"></i>
                             </a>
-
                         </div>
-                    </div> <!-- end masonry__brick -->
-
-                </div> <!-- end masonry -->
-            </div> <!-- end col-full -->
-        </div> <!-- end works-content -->
-
-    </section> <!-- end s-works -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
     {% if clientes %}
-    <!-- clients
-    ================================================== -->
     <section id="clients" class="s-clients">
-
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">Nuestros clientes</h3>
                 <h1 class="display-2">La opinión de nuestros clientes es fundamental para nosotros</h1>
             </div>
-        </div> <!-- end section-header -->
-
+        </div>
         <div class="row clients-testimonials" data-aos="fade-up">
             <div class="col-full">
                 <div class="testimonials">
                     {% for cliente in clientes %}
                     <div class="testimonials__slide">
-
                         <p>{{ cliente.mensaje }}</p>
-
                         <img src="{% static 'web/images/avatars/user-01.jpg' %}" alt="Author image" class="testimonials__avatar">
                         <div class="testimonials__info">
                             <span class="testimonials__name">{{ cliente.nombre }}</span>
                             <span class="testimonials__pos">{{ cliente.cargo }}</span>
                         </div>
-
                     </div>
                     {% endfor %}
-                </div><!-- end testimonials -->
-
-            </div> <!-- end col-full -->
-        </div> <!-- end client-testimonials -->
-
-    </section> <!-- end s-clients -->
-
+                </div>
+            </div>
+        </div>
+    </section>
     {%  endif %}
 
-    <!-- contact
-    ================================================== -->
-    <section id="contact" class="s-contact">
 
+    <section id="contact" class="s-contact">
         <div class="overlay"></div>
         <div class="contact__line"></div>
-
         <div class="row section-header" data-aos="fade-up">
             <div class="col-full">
                 <h3 class="subhead">Contáctanos</h3>
                 <h1 class="display-2 display-2--light">Estamos a tu servicio</h1>
             </div>
         </div>
-
         <div class="row contact-content" data-aos="fade-up">
-
             <div class="contact-primary">
-
                 <h3 class="h6">Envíanos un mensaje</h3>
-
                 <form name="contactForm" id="contactForm" method="POST">
                     {% csrf_token %}
-
                     <div class="form-field">
                         <input name="nombre" type="text" id="contactName" placeholder="Tu nombre" value="" minlength="2" required="" aria-required="true" class="full-width">
                     </div>
@@ -491,21 +404,15 @@
                     <button class="btn--primary" type="submit">Enviar</button>
                 </form>
 
-                <!-- contact-warning -->
                 <div class="message-warning">
                     Algo ha salido mal, por favor, intenta de nuevo.
                 </div>
-
-                <!-- contact-success -->
                 <div class="message-success">
                     Tu mensaje ha sido enviado, nos pondremos en contacto contigo, gracias!<br>
                 </div>
-
-            </div> <!-- end contact-primary -->
-
+            </div>
             <div class="contact-secondary">
                 <div class="contact-info">
-
                     <h3 class="h6 hide-on-fullwidth">Información sobre Contacto</h3>
                       <div class="cinfo">
                         <h5>Ofrecemos</h5>
@@ -514,7 +421,6 @@
                             Creación de sistemas web
                         </p>
                     </div>
-
                     <div class="cinfo">
                         <h5>Ubicados en</h5>
                         <p>
@@ -522,21 +428,18 @@
                             Perú
                         </p>
                     </div>
-
                     <div class="cinfo">
                         <h5>Correo de contacto</h5>
                         <p>
                             developerpeperu@gmail.com
                         </p>
                     </div>
-
                     <div class="cinfo">
                         <h5>Teléfono</h5>
                         <p>
                             Móvil: (+51) 960690766
                         </p>
                     </div>
-
                     <ul class="contact-social">
                         <li>
                             <a href="https://www.facebook.com/developerper/"><i class="fa fa-facebook" aria-hidden="true"></i></a>
@@ -548,36 +451,23 @@
                             <a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                         </li>
                         <li>
-                            <a href="#"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
+                            <a href="{% url 'home_blog' %}"><i class="fa fa-dribbble" aria-hidden="true"></i></a>
                         </li>
-                    </ul> <!-- end contact-social -->
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-                </div> <!-- end contact-info -->
-            </div> <!-- end contact-secondary -->
-
-        </div> <!-- end contact-content -->
-
-    </section> <!-- end s-contact -->
-
-
-    <!-- footer
-    ================================================== -->
     <footer id="suscribete">
-
         <div class="row footer-main">
-
             <div class="col-six tab-full left footer-desc">
                <h8 class = "logo_font">DEVELOPER.PE</h8>
-
-                <p>Proin eget tortor risus. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Praesent sapien massa, convallis a pellentesque nec, egestas non nisi. Mauris blandit aliquet elit, eget tincidunt nibh pulvinar a. Nulla porttitor accumsan tincidunt. Nulla porttitor accumsan tincidunt. Quaerat voluptas autem necessitatibus vitae aut.</p>
-
+                <p>Somos la primera generación que es capaz de tener una idea, verla en nuestras manos,ser capaces de pulsar un botón y ponerlo en manos de millones de personas -  <a href=''>Drew Houston</a></p>
             </div>
-
             <div class="col-six tab-full right footer-subscribe">
-
                 <h4>Infórmate con nosotros</h4>
                 <p>Suscríbete para recibir un correo cada ves que publicamos un nuevos post en nuestro blog</p>
-
                 <div class="subscribe-form">
                     <form id="mc-form" class="group" method="POST">
                         {% csrf_token %}
@@ -587,31 +477,20 @@
                         <label for="mc-email" class="subscribe-message" id="message"></label>
                     </form>
                 </div>
-
             </div>
-
-        </div> <!-- end footer-main -->
-
+        </div>
         <div class="row footer-bottom">
-
             <div class="col-twelve">
                 <div class="copyright">
                     <span>© Copyright Developer.pe 2018</span>
                 </div>
-
                 <div class="go-top">
                     <a class="smoothscroll" title="Back to Top" href="#top"><i class="icon-arrow-up" aria-hidden="true"></i></a>
                 </div>
             </div>
+        </div>
+    </footer>
 
-        </div> <!-- end footer-bottom -->
-
-    </footer> <!-- end footer -->
-
-
-
-    <!-- Java Script
-    ================================================== -->
     <script src="{% static 'web/js/jquery-3.2.1.min.js' %}"></script>
     <script src="{% static 'web/js/plugins.js' %}"></script>
     <script src="{% static 'web/js/DjangoAjax.js' %}"></script>
@@ -640,5 +519,4 @@
         });
     </script>
 </body>
-
 </html>
