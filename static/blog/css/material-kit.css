@@ -10939,18 +10939,18 @@ legend {
 }
 
 a {
-  color: #9c27b0;
+  color: #ffffff;
 }
 
 a:hover,
 a:focus {
-  color: #89229b;
+  color: #ffffff;
   text-decoration: none;
 }
 
 a.text-info:hover,
 a.text-info:focus {
-  color: #00a5bb;
+  color: #ffffff;
 }
 
 a .material-icons {

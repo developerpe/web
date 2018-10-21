@@ -5,11 +5,14 @@
   <div class="fh5co-blog animate-box" id="cambio">
       <a href="{% url 'detail_post' p.id %}" class="pagination-helper"><img class="img-rounded img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
       <div class="blog-text">
+        <h7 style="color:red;" class="category">#{{ p.categoria }}</h7>
         <h3><a href="{% url 'detail_post' p.id %}" class="pagination-helper">{{ p.titulo }}</a></h3>
-        <span class="posted_on">{{ p.fecha_creacion }}</span>
-        <span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+        <h7 class="date">{{ p.fecha_creacion }}</h7>
         <p>{{ p.description }}</p>
-        <a href="{% url 'detail_post' p.id %}" class="btn btn-primary leer_mas is-half">Leer más</a>
+        <div class="text-center">
+          <a href="{% url 'detail_post' p.id %}" class="btn btn-primary leer_mas">Leer más</a>
+        </div>
+
       </div>
   </div>
 </div>

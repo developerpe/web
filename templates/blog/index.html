@@ -40,6 +40,7 @@
 	<link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
 	<link rel="stylesheet" href="{% static 'blog/css/bulma.min.css' %}">
 
+
 	<!-- Modernizr JS -->
 	<script src="{% static 'blog/js/modernizr-2.6.2.min.js' %}"></script>
 
@@ -97,7 +98,7 @@
 
 	<div class="container">
 		<div class="row">
-	        <div class="col-md-6">
+	        <div class="col-md-12">
 						<form method='post'>
 							{% csrf_token %}
 		            <div id="custom-search-input">
@@ -122,13 +123,16 @@
 				{% csrf_token %}
 				<div class="column is-one-third" >
 					<div class="fh5co-blog animate-box" id="cambio">
-							<a href="{% url 'detail_post' p.id %}" class="pagination-helper"><img class="img-rounded img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
+							<a href="{% url 'detail_post' p.id %}" class="pagination-helper"><img class="img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
 							<div class="blog-text">
-								<h3><a href="{% url 'detail_post' p.id %}" class="pagination-helper">{{ p.titulo }}</a></h3>
-								<span class="posted_on">{{ p.fecha_creacion }}</span>
-								<span class="comment"><a href="">21<i class="icon-speech-bubble"></i></a></span>
+								<h7 style="color:red;" class="category">#{{ p.categoria }}</h7>
+								<h3><a href="{% url 'detail_post' p.id %}" class="pagination-helper"><strong>{{ p.titulo }}</strong></a></h3>
+								<h7 class="date">{{ p.fecha_creacion }}</h7>
 								<p>{{ p.description }}</p>
-								<a href="{% url 'detail_post' p.id %}" class="btn btn-primary leer_mas is-half">Leer más</a>
+								<div class="text-center">
+									<a href="{% url 'detail_post' p.id %}" class="btn btn-primary leer_mas">Leer más</a>
+								</div>
+
 							</div>
 					</div>
 				</div>
@@ -243,7 +247,7 @@
 			 function update(){
 					 $.ajax({
 							 method:'POST',
-							 url:'/blog/prueba/',
+							 url:{% block url %}'/blog/prueba/'{% endblock %},
 							 data:$('form').serialize()
 					 })
 					 .done(function(response){

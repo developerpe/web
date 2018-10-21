@@ -1046,7 +1046,7 @@ h1, h2, h3, h4, h5, h6, figure {
   position: relative;
   background: #fff;
   width: 100%;
-  padding: 30px;
+  padding: 15px;
   float: left;
   -webkit-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
   -moz-box-shadow: 0px 10px 20px -12px rgba(0, 0, 0, 0.18);
@@ -1068,7 +1068,6 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 .fh5co-blog .blog-text h3 {
   font-size: 20px;
-  margin-bottom: 20px;
   line-height: 1.5;
 }
 .fh5co-blog .blog-text h3 a {
@@ -1440,15 +1439,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .btn {
-  margin-right: 4px;
-  margin-bottom: 4px;
   font-family: "Work Sans", Arial, sans-serif;
-  font-size: 16px;
+  font-size: 12px;
   font-weight: 400;
-  -webkit-border-radius: 30px;
-  -moz-border-radius: 30px;
-  -ms-border-radius: 30px;
-  border-radius: 30px;
   -webkit-transition: 0.5s;
   -o-transition: 0.5s;
   transition: 0.5s;
@@ -1661,5 +1654,16 @@ h1, h2, h3, h4, h5, h6, figure {
 .stylish-input-group button{
     border:0;
     background:transparent;
+}
+
+.category{
+  font-size: 12px;
+}
+
+.date{
+  font-size: 13px;
+  opacity: 90%;
+  margin-bottom: 40px;
+  color: grey;
 }
 /*# sourceMappingURL=style.css.map */
