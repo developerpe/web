@@ -61,13 +61,13 @@ class Post(models.Model):
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
     comentarios = models.ManyToManyField(Comentario, blank = True)
     estado = models.BooleanField('Activo o No Activo', default = False)
-    fecha_creacion = models.DateField('Fecha de creación',auto_now = True, auto_now_add = False)
+    fecha_creacion = models.DateField('Fecha de creación', blank = True, null = True)
 
 
     class Meta:
         verbose_name = 'Post'
         verbose_name_plural = 'Posts'
-        ordering = ['fecha_creacion']
+        ordering = ['-fecha_creacion']
 
     def __str__(self):
         return self.slug
