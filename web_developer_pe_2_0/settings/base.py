@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    'jet',
-    'jet.dashboard',
+    #'jet',
+    #'jet.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -106,8 +106,8 @@ USE_L10N = True
 
 USE_TZ = True
 
-JET_DEFAULT_THEME = 'light-violet'
-JET_SIDE_MENU_COMPACT = True
+#JET_DEFAULT_THEME = 'light-violet'
+#JET_SIDE_MENU_COMPACT = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
