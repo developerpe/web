@@ -91,6 +91,7 @@
 		</div>
 	</header>
 
+{% block search %}
 	<div class="container">
 		<div class="row">
 	        <div class="col-md-12">
@@ -109,7 +110,8 @@
 	        </div>
 		</div>
 	</div>
-
+{% endblock %}
+{% block list %}
 	<div id="fh5co-blog" >
 		<div class="container">
 			<div class="columns is-multiline" id="cuerpo">
@@ -135,7 +137,7 @@
 			</div>
 		</div>
 	</div>
-
+{% endblock %}
 <nav class="pagination pageNums is-centered " role="navigation" aria-label="pagination">
   <ul class="pagination-list">
 		{% for page in pages %}
@@ -148,10 +150,10 @@
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-color: black;">
 		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>DEVELOPER.PE</h4>
-					<ul class="fh5co-footer-links">
+			<div class="columns">
+				<div class="column is-4">
+					<h4 class="text-center small">DEVELOPER.PE</h4>
+					<ul class="fh5co-footer-links text-center">
 						<li><a href="{% url 'home' %}">Inicio</a></li>
 						<li><a href="{% url 'home' %}">Acerca de</a></li>
 						<li><a href="{% url 'home' %}">Descubre</a></li>
@@ -161,9 +163,9 @@
 					</ul>
 				</div>
 
-				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Blog</h4>
-					<ul class="fh5co-footer-links">
+				<div class="column is-4">
+					<h4 class="text-center small">Blog</h4>
+					<ul class="fh5co-footer-links text-center">
 						<li><a href="{% url 'blog_movil' %}">Móvil</a></li>
 						<li><a href="{% url 'blog_tutoriales' %}">Tutoriales</a></li>
 						<li><a href="{% url 'blog_general' %}">Generales</a></li>
@@ -173,38 +175,25 @@
 					</ul>
 				</div>
 
-				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Video Tutoriales</h4>
-					<ul class="fh5co-footer-links">
+				<div class="column is-4">
+					<h4 class="text-center small">Video Tutoriales</h4>
+					<ul class="fh5co-footer-links text-center">
 						<li><a href="#">Variados</a></li>
 						<li><a href="#">Frontend</a></li>
 						<li><a href="#">Backend</a></li>
 					</ul>
 				</div>
-
-				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-					<h4>Legal</h4>
-					<ul class="fh5co-footer-links">
-						<li><a href="#">Find Designers</a></li>
-						<li><a href="#">Find Developers</a></li>
-						<li><a href="#">Teams</a></li>
-						<li><a href="#">Advertise</a></li>
-						<li><a href="#">API</a></li>
+		</div>
+		<div class="columns copyright">
+			<div class="column is-12 text-center">
+				<p><small class="block small">&copy; 2018 All Rights Reserved by Developer.pe</small></p>
+				<p>
+					<ul class="fh5co-social-icons">
+						<li><a href="https://twitter.com/Developerpepiur?lang=es"><i class="icon-twitter"></i></a></li>
+						<li><a href="https://www.facebook.com/developerper/"><i class="icon-facebook"></i></a></li>
+						<li><a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ"><i class="icon-youtube"></i></a></li>
 					</ul>
-				</div>
-			</div>
-
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
-					<p><small class="block">&copy; 2018 All Rights Reserved by Developer.pe</small></p>
-					<p>
-						<ul class="fh5co-social-icons">
-							<li><a href="https://twitter.com/Developerpepiur?lang=es"><i class="icon-twitter"></i></a></li>
-							<li><a href="https://www.facebook.com/developerper/"><i class="icon-facebook"></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UCOzf2U3BTng85gsFJHvIInQ"><i class="icon-youtube"></i></a></li>
-						</ul>
-					</p>
-				</div>
+				</p>
 			</div>
 		</div>
 	</footer>
@@ -225,6 +214,7 @@
 	<script src="{% static 'blog/js/magnific-popup-options.js' %}"></script>
 	<script src="{% static 'blog/js/main.js' %}"></script>
 	<script src="{% static 'web/js/DjangoAjax.js' %}"></script>
+	{% block js_extra %}
 	<script>
 			 function update(){
 					 $.ajax({
@@ -253,5 +243,6 @@
 					 })
 			 });
 	 </script>
+	 {% endblock %}
 	</body>
 </html>
