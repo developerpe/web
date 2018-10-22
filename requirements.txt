@@ -1,7 +1,6 @@
 dj-database-url==0.5.0
 dj-static==0.0.6
 Django==2.0.6
-django-ajax-utilities==1.2.10
 django-ckeditor==5.6.1
 django-jet==1.0.7
 django-js-asset==1.1.0
