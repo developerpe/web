@@ -23,8 +23,8 @@ from django.contrib.auth.views import logout_then_login,logout
 from apps.usuarios.views import Login,CrearUsuario
 
 urlpatterns = [
-	path('jet/', include('jet.urls', 'jet')),
-    path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
+	#path('jet/', include('jet.urls', 'jet')),
+    #path('jet/dashboard/', include('jet.dashboard.urls', 'jet-dashboard')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
     path('administrador/', admin.site.urls),
     path('', home, name = 'home'),

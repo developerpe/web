@@ -16,7 +16,7 @@ class UserManager(BaseUserManager, models.Manager):
 
     def create_superuser(self, username, email, password, **extra_fields):
         return self._create_user(username, email, password, True,True, **extra_fields)
-        
+
 def upload_location(instance, filename):
 	return "%s/%s" %(instance.id, filename)
 
@@ -25,10 +25,10 @@ class User(AbstractBaseUser,PermissionsMixin):
     email = models.EmailField('Correo',max_length=255,unique=True)
     first_name = models.CharField('Nombres',max_length=255)
     last_name = models.CharField('Apellidos',max_length=255)
-    
-    editor = models.BooleanField('Editor',default = False)    
+
+    editor = models.BooleanField('Editor',default = False)
     avatar = models.URLField(null=True,blank=True)
-    
+
     objects = UserManager()
     is_active = models.BooleanField(default=True)
     is_staff = models.BooleanField(default=False)
