@@ -53,7 +53,7 @@ class CrearUsuario(TemplateView):
                 user.save()
 
                 asunto = 'Registro de usuario'
-                mensaje_email = 'Su usuario ha sido creado, la activación del mismo no durará más de 24 horas\n Su contraseña es'+str(username)
+                mensaje_email = 'Su usuario ha sido creado, la activación del mismo no durará más de 24 horas Su contraseña es'
                 email_from = settings.EMAIL_HOST_USER
                 email_to = [email]
 
