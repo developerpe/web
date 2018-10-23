@@ -106,7 +106,7 @@ USE_L10N = True
 
 USE_TZ = True
 #JET_DEFAULT_THEME = 'light-violet'
-#JET_SIDE_MENU_COMPACT = False
+JET_SIDE_MENU_COMPACT = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 
