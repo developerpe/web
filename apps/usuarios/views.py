@@ -10,12 +10,7 @@ from django.views.decorators.cache import never_cache
 from django.utils.decorators import method_decorator
 from django.contrib.auth.views import login
 from .models import User
-
-from django.core.mail import send_mail
-from django.conf import settings
-from sparkpost import SparkPost
-import os
-
+from .utils import SendSubscribeMail
 
 class Login(FormView):
     template_name = 'login.html'
@@ -54,31 +49,9 @@ class CrearUsuario(TemplateView):
                 )
                 user.set_password(username)
                 user.save()
-
-                sp = SparkPost()
-                from_email = 'test@' + os.environ.get('SPARKPOST_SANDBOX_DOMAIN')
-
-                response = sp.transmissions.send(
-                    recipients = ['openmindsan@gmail.com'],
-                    html = '<p>Hola</>',
-                    from_email = from_email,
-                    subject = 'Holaaaaaaaaa'
-                )
-                print(response)
-                """
-                asunto = 'Registro de usuario'
-                mensaje_email = 'Su usuario ha sido creado, la activación del mismo no durará más de 24 horas Su contraseña es'
-                email_from = settings.EMAIL_HOST_USER
-                email_to = [email]
-
-                print(email_to)
-
-                send_mail(asunto,mensaje_email,email_from,['openmindsan@gmail.com'],fail_silently = False)
-                """
+                SendSubscribeMail(email)
                 message = "Success"
-
             else:
                 message = "El usuario ya existe"
-
             return HttpResponse(message)
         return render(request,'login.html')

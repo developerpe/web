@@ -55,7 +55,7 @@
   height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <!-- End Google Tag Manager (noscript) -->
 
-  
+
     <header class="s-header">
         <div class="header-logo">
             <a class="site-logo" href="{% url 'home' %}">
@@ -468,6 +468,25 @@
     </section>
 
     <footer id="suscribete">
+      <div class="row footer-main">
+            <div class="col-six tab-full left footer-desc">
+               <h8 class = "logo_font">DEVELOPER.PE</h8>
+                <p>Somos la primera generación que es capaz de tener una idea, verla en nuestras manos,ser capaces de pulsar un botón y ponerlo en manos de millones de personas -  <a href=''>Drew Houston</a></p>
+            </div>
+            <div class="col-six tab-full right footer-subscribe">
+                <h4>Infórmate con nosotros</h4>
+                <p>Suscríbete para recibir un correo cada ves que publicamos un nuevos post en nuestro blog</p>
+                <div class="subscribe-form">
+                    <form id="mc-form" class="group" method="POST">
+                        {% csrf_token %}
+                        <input type="email" value="" name="correo" class="email" id="mc-email" placeholder="Dirección de correo" required="">
+                        <input type="submit" name="subscribe" id="subscribe" value="Subscríbete">
+                        <label for="mc-email" class="subscribe-message" id="message"></label>
+                        <label for="mc-email" class="subscribe-message" id="message"></label>
+                    </form>
+                </div>
+            </div>
+        </div>
         <div class="row footer-bottom">
             <div class="col-twelve">
                 <div class="copyright">
@@ -484,6 +503,26 @@
     <script src="{% static 'web/js/plugins.js' %}"></script>
     <script src="{% static 'web/js/DjangoAjax.js' %}"></script>
     <script src="{% static 'web/js/new.js' %}"></script>
-
+    <script type="text/javascript">
+        $('#subscribe').click(function(){
+            $('#message').fadeIn(5000,function(){
+                document.getElementById('message').innerHTML = 'Enviando...';
+            });
+        });
+        $('#mc-form').submit(function(event){
+            event.preventDefault();
+            $.ajax({
+                url: '/',
+                type: 'POST',
+                data: $('#mc-form').serialize(),
+                success: function(response){
+                    $('#message').fadeIn(5000,function(){
+                        document.getElementById('message').innerHTML = 'Su registro fué completado correctamente, revise su bandeja en correos no deseado! :D';
+                        document.getElementById('mc-email').value = '';
+                    });
+                }
+            });
+        });
+    </script>
 </body>
 </html>

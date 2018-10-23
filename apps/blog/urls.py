@@ -16,5 +16,5 @@ urlpatterns = [
     path('programacion/', Blog_programacion.as_view(), name = 'blog_programacion'),
     path('videojuegos/', Blog_videojuegos.as_view(), name = 'blog_videojuegos'),
     path('tutoriales/', Blog_tutoriales.as_view(), name = 'blog_tutoriales'),
-    path('<int:id>/', Detail_Post.as_view(), name = 'detail_post'),
+    path('<slug:slug>/', Detail_Post.as_view(), name = 'detail_post'),
 ]

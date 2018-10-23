@@ -43,8 +43,8 @@ def Prueba(request):
 	return render(request,'blog/post.html',context)
 
 class Detail_Post(TemplateView):
-	def get(self,request,id,*args,**kwargs):
-		post_detail = Post.objects.get(id = id)
+	def get(self,request,slug,*args,**kwargs):
+		post_detail = Post.objects.get(slug=slug)
 		content = {
 			'post_detail':post_detail
 		}
