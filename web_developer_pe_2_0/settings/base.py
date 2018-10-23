@@ -106,8 +106,6 @@ USE_L10N = True
 
 USE_TZ = True
 
-SPARKPOST_API_KEY = '7ff8d3863a366fbd0b0989f3b6fb89f1294b08a2'
-EMAIL_BACKEND = 'sparkpost.django.email_backend.SparkPostEmailBackend'
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
 

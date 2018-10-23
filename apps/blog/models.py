@@ -60,7 +60,7 @@ class Post(models.Model):
     autor = models.ForeignKey(Autor, on_delete = models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
     comentarios = models.ManyToManyField(Comentario, blank = True)
-    estado = models.BooleanField('Activo o No Activo', default = False)
+    estado = models.BooleanField('Publicado/No Publicado', default = False)
     fecha_creacion = models.DateField('Fecha de creación', blank = True, null = True)
 
 

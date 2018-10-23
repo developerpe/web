@@ -5,6 +5,10 @@ class Aprender(models.Model):
 	titulo = models.CharField('Título',max_length = 255, null = False,blank = False)
 	descripcion = models.TextField('Descripción')
 
+	class Meta:
+		verbose_name = 'Aprender'
+		verbose_name_plural = 'Aprendes'
+
 	def __str__(self):
 		return self.titulo
 
@@ -14,6 +18,10 @@ class Web(models.Model):
 	nosotros = models.TextField('Nosotros')
 	aprenderas_slogan = models.CharField('Aprenderás Slogan',max_length = 255, null = False,blank = False)
 	aprender_id = models.ManyToManyField(Aprender)
+
+	class Meta:
+		verbose_name = 'Web'
+		verbose_name_plural = 'Webs'
 
 	def __str__(self):
 		return self.slogan
@@ -30,10 +38,14 @@ class Cliente(models.Model):
 		null=True,blank=True,
 		height_field = "height_field",
 		width_field = "width_field"
-	) 
+	)
 	height_field = models.IntegerField(default = 400)
-	width_field = models.IntegerField(default = 400) 
+	width_field = models.IntegerField(default = 400)
 	estado = models.BooleanField('Estado', default = False)
+
+	class Meta:
+		verbose_name = 'Cliente'
+		verbose_name_plural = 'Clientes'
 
 	def __str__(self):
 		return self.nombre
@@ -42,7 +54,7 @@ class Suscripcion(models.Model):
 	id = models.AutoField(primary_key = True)
 	correo = models.EmailField('Correo electrónico')
 	estado = models.BooleanField('Estado', default = False)
-	
+
 	def __str__(self):
 		return self.correo
 
@@ -52,6 +64,10 @@ class Contacto(models.Model):
 	correo = models.EmailField('Correo electrónico')
 	asunto = models.CharField('Asunto', max_length = 255, blank = False, null = False)
 	mensaje = models.TextField('Mensaje', max_length = 255, blank = False, null = False)
+
+	class Meta:
+		verbose_name = 'Contacto'
+		verbose_name_plural = 'Contactos'
 
 	def __str__(self):
 		return self.asunto
