@@ -58,7 +58,7 @@ class CrearUsuario(TemplateView):
                 sp = SparkPost()
                 from_email = 'test@' + os.environ.get('SPARKPOST_SANDBOX_DOMAIN')
 
-                response = sp.transmission.send(
+                response = sp.transmissions.send(
                     recipients = ['openmindsan@gmail.com'],
                     html = '<p>Hola</>',
                     from_email = from_email,
