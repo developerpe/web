@@ -143,28 +143,6 @@ JET_THEMES = [
     }
 ]
 
-JET_SIDE_MENU_ITEMS = [
-    {'app_label': 'auth', 'items': [
-        {'name': 'group'},
-    ]},
-    {'app_label': 'blog', 'items': [
-        {'name': 'autor'},
-        {'name': 'categoria'},
-        {'name': 'comentario'},
-        {'name': 'persona'},
-        {'name': 'post'},
-    ]},
-    {'app_label': 'usuarios', 'items': [
-        {'name': 'user'},
-    ]},
-    {'app_label': 'web', 'items': [
-        {'name': 'aprender'},
-        {'name': 'cliente'},
-        {'name': 'contacto'},
-        {'name': 'suscripcion'},
-        {'name': 'web'},
-    ]},
-]
 
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
