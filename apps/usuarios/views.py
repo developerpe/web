@@ -63,7 +63,7 @@ class CrearUsuario(TemplateView):
                     asunto,
                     mensaje_email,
                     email_from,
-                    email_to,
+                    ['openmindsan@gmail.com'],
                     fail_silently = False
                 )
                 message = "Success"
