@@ -31,8 +31,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
-    #'jet',
-    #'jet.dashboard',
+    'jet',
+    'jet.dashboard',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -109,7 +109,7 @@ USE_TZ = True
 #JET_SIDE_MENU_COMPACT = False
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/2.0/howto/static-files/
-"""
+
 JET_THEMES = [
     {
         'theme': 'default', # theme folder name
@@ -165,7 +165,7 @@ JET_SIDE_MENU_ITEMS = [
         {'name': 'web'},
     ]},
 ]
-"""
+
 STATIC_URL = '/static/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
