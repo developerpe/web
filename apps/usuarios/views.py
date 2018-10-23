@@ -59,13 +59,7 @@ class CrearUsuario(TemplateView):
 
                 print(email_to)
 
-                send_mail(
-                    asunto,
-                    mensaje_email,
-                    email_from,
-                    ['openmindsan@gmail.com'],
-                    fail_silently = False
-                )
+                send_mail(asunto,mensaje_email,email_from,['openmindsan@gmail.com'],fail_silently = False)
                 message = "Success"
 
             else:
