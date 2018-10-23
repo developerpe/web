@@ -11,6 +11,9 @@ from django.utils.decorators import method_decorator
 from django.contrib.auth.views import login
 from .models import User
 
+from django.core.mail import send_mail
+from django.conf import settings
+
 class Login(FormView):
     template_name = 'login.html'
     form_class = FormularioLogin
@@ -48,10 +51,25 @@ class CrearUsuario(TemplateView):
                 )
                 user.set_password(username)
                 user.save()
+
+                asunto = 'Registro de usuario'
+                mensaje_email = 'Su usuario ha sido creado, la activación del mismo no durará más de 24 horas\n Su contraseña es'+str(username)
+                email_from = settings.EMAIL_HOST_USER
+                email_to = [email]
+
+                print(email_from)
+
+                send_mail(
+                    asunto,
+                    mensaje_email,
+                    email_from,
+                    [email_to],
+                    fail_silently = False
+                )
                 message = "Success"
 
             else:
                 message = "El usuario ya existe"
-                
+
             return HttpResponse(message)
         return render(request,'login.html')
