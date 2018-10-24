@@ -150,7 +150,7 @@ sup {
 }
 
 a {
-  color: #9c27b0;
+  /*color: #9c27b0;*/
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -554,7 +554,7 @@ sup {
 }
 
 a {
-  color: #9c27b0;
+  /*color: #9c27b0;*/
   text-decoration: none;
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
@@ -10922,18 +10922,18 @@ legend {
 }
 
 a {
-  color: #ffffff;
+  /*color: #ffffff;*/
 }
 
 a:hover,
 a:focus {
-  color: #ffffff;
+  color: #000000;
   text-decoration: none;
 }
 
 a.text-info:hover,
 a.text-info:focus {
-  color: #ffffff;
+  color: #000000;
 }
 
 a .material-icons {
