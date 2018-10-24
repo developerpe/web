@@ -1,6 +1,6 @@
 from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['developerpe.herokuapp.com','www.developerpe.com']
 # Database
@@ -42,12 +42,8 @@ STATICFILES_DIRS=[
 AUTH_USER_MODEL = 'usuarios.User'
 CKEDITOR_UPLOAD_PATH = "uploads/"
 
-
-
-
-
 CKEDITOR_CONFIGS = {
     'default': {
-        'toolbar': None,
+        'toolbar': 'full',
     },
 }
