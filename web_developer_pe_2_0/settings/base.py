@@ -23,7 +23,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = '-z&nm#**pjh2_1dq%82q^k%m-65n#h&o3fiqd=u)x#ys!n6!bn'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
 ALLOWED_HOSTS = ['127.0.0.1','localhost']
 
@@ -41,7 +41,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'debug_toolbar',
+    #'debug_toolbar',
     'apps.usuarios',
     'apps.blog',
     'apps.web',
@@ -57,9 +57,9 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    #'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
-
+"""
 DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.versions.VersionsPanel',
     'debug_toolbar.panels.timer.TimerPanel',
@@ -74,7 +74,7 @@ DEBUG_TOOLBAR_PANELS = [
     'debug_toolbar.panels.logging.LoggingPanel',
     'debug_toolbar.panels.redirects.RedirectsPanel',
 ]
-
+"""
 ROOT_URLCONF = 'web_developer_pe_2_0.urls'
 
 TEMPLATES = [
@@ -140,7 +140,7 @@ CKEDITOR_CONFIGS = {
         'toolbar': 'full',
     },
 }
-
+"""
 def show_toolbar(request):
     return True
 
@@ -148,6 +148,6 @@ DEBUG_TOOLBAR_CONFIG = {
     'INTERCEPT_REDIRECTS': False,
     'SHOW_TOOLBAR_CALLBACK': show_toolbar
 }
-
+"""
 LOGIN_REDIRECT_URL= reverse_lazy('admin:index')
 LOGOUT_REDIRECT_URL= reverse_lazy('login')
