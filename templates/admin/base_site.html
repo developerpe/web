@@ -1,6 +1,7 @@
 {% extends "admin/base.html" %}
+{% load pwa %}
 {% load staticfiles %}
-
+{% progressive_web_app_meta %}
 {% block title %}{{ title }} | Developer.pe{% endblock %}
 {% block extrastyle %}
   <style>

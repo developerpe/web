@@ -24,6 +24,7 @@ from apps.usuarios.views import Login,CrearUsuario
 
 urlpatterns = [
     path('ckeditor/', include('ckeditor_uploader.urls')),
+    path('', include('pwa.urls')),
     path('administrador/', admin.site.urls),
     path('', home, name = 'home'),
     path('blog/', include('apps.blog.urls'), name = 'blog'),

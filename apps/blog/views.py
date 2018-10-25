@@ -5,6 +5,7 @@ import re
 
 DATE_REGEX=re.compile(r'^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
 
+
 class Home_blog(TemplateView):
 	def get(self,request,*args,**kwargs):
 		post = Post.objects.filter(

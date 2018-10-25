@@ -1,3 +1,4 @@
+{% load pwa %}
 {% load staticfiles %}
 <!DOCTYPE HTML>
 <html lang="es">
@@ -15,6 +16,7 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<title>{% block title %}Blog | Developer.pe{% endblock %}</title>
 	<meta name="viewport" content="width=device-width, initial-scale=1">
+	{% progressive_web_app_meta %}
 	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'web/logo.png' %}">
 	<meta name="description" content="Blog | Developer.pe" />
 	<meta name="keywords" content="Generales, Tecnología, Programación, Videojuegos, Móvil, Tutoriales" />
