@@ -32,3 +32,9 @@ urlpatterns = [
     path('admin/logout/',logout, name = 'logout'),
     path('crear_usuario/',CrearUsuario.as_view(),name = 'crear_usuario'),
 ]+ static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+if settings.DEBUG:
+    import debug_toolbar
+    urlpatterns = [
+        path('__debug__/', include(debug_toolbar.urls)),
+    ] + urlpatterns

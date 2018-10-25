@@ -1,0 +1,53 @@
+{% extends "admin/base.html" %}
+{% load staticfiles %}
+
+{% block title %}{{ title }} | Developer.pe{% endblock %}
+{% block extrastyle %}
+  <style>
+    #header{
+      background-color: #404040ab;
+    }
+    .module h2, .module caption, .inline-group h2{
+      background-color:#404040ab;
+    }
+    a:link, a:visited{
+      color:black;
+    }
+    div.breadcrumbs{
+      background-color:#404040ab;
+    }
+    .developer{
+      width:50px;
+      height:50px;
+    }
+    body{
+      background:#f1e7e7;
+    }
+    .module{
+      background:#f1e7e7;
+    }
+    #content-related .module{
+      background:#f1e7e7;
+    }
+    #content-related{
+      background:#f1e7e7;
+    }
+    #content{
+      background:#f1e7e7;
+    }
+    #toolbar{
+      background:none;
+    }
+    #changelist #toolbar{
+      background:none;
+    }
+    #changelist-form{
+      background:#f1e7e7;
+    }
+  </style>
+{% endblock %}
+{% block branding %}
+<h1 id="site-name"><img class = "developer" src="{% static 'web/logo.png' %}" alt="logo"><a href="{% url 'admin:index' %}">Developer.pe</a></h1>
+{% endblock %}
+
+{% block nav-global %}{% endblock %}
