@@ -3,7 +3,7 @@
   "short_name": "Developer.pe",
   "description": "Programar es para Todos y para Todo! :D",
   "background_color": "#000000",
-  "theme_color": "#000000",
+  "theme_color": "#fffff",
   "orientation": "portrait",
   "display": "standalone",
   "start_url": "/?utm_source=web_app_manifest",
