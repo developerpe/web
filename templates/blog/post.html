@@ -2,17 +2,20 @@
 {% for p in post %}
 {% csrf_token %}
 <div class="column is-one-third" >
-  <div class="fh5co-blog animate-box" id="cambio">
-      <a href="{% url 'detail_post' p.slug %}" class="pagination-helper"><img class="img-rounded img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
+  <div class="fh5co-blog" id="cambio">
+    <div class="is-one-third imagen_previa">
+      <a href="{% url 'detail_post' p.slug %}" class="pagination-helper"><img class="img-responsive" src="{{ p.imagen_previa }}" alt=""></a>
+    </div>
       <div class="blog-text">
         <h7 style="color:red;" class="category">#{{ p.categoria }}</h7>
-        <h3><a href="{% url 'detail_post' p.slug %}" class="pagination-helper">{{ p.titulo }}</a></h3>
+        <h6>
+          <a href="{% url 'detail_post' p.slug %}" class="pagination-helper" style="color:black;"><strong>{{ p.titulo }}</strong></a>
+        </h6>
         <h7 class="date">{{ p.fecha_creacion }}</h7>
         <p>{{ p.description }}</p>
         <div class="text-center">
-          <a href="{% url 'detail_post' p.slug %}" class="btn btn-primary leer_mas">Leer más</a>
+          <a href="{% url 'detail_post' p.slug %}" class="btn dark leer_mas">Leer más</a>
         </div>
-
       </div>
   </div>
 </div>
