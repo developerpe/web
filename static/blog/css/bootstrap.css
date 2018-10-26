@@ -885,6 +885,7 @@ pre code {
 @media (min-width: 992px) {
   .container {
     width: 970px;
+    font-size: 14px;
   }
 }
 @media (min-width: 1200px) {
