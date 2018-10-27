@@ -369,6 +369,7 @@ img {
   display: block;
   max-width: 100%;
   height: auto;
+  border-radius: 5px;
 }
 
 .img-rounded {
@@ -3328,7 +3329,7 @@ tbody.collapse.in {
 .input-group-addon:not(:first-child):not(:last-child),
 .input-group-btn:not(:first-child):not(:last-child),
 .input-group .form-control:not(:first-child):not(:last-child) {
-  border-radius: 0;
+  border-radius: 5px;
 }
 
 .input-group-addon,
