@@ -111,7 +111,7 @@
                 <h1 class="title">{{ post_detail.titulo }}</h1>
                 <h7 style="color:red;" class="category">#{{ post_detail.categoria }} |</h7>
                 <h7 class="date">{{ post_detail.fecha_creacion }} |</h7>
-                <h7 class="date">{{ post_detail.autor }} |</h7>
+                <h7 class="date">{{ post_detail.autor }}</h7>
               </div>
             </div>
           </div>
@@ -131,8 +131,8 @@
     *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
 
     var disqus_config = function () {
-    this.page.url = {{ request.build_absolute_uri }};  // Replace PAGE_URL with your page's canonical URL variable
-    this.page.identifier = {{ post_detail.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+      this.page.url = '{{ request.build_absolute_uri }}';  // Replace PAGE_URL with your page's canonical URL variable
+      this.page.identifier = {{ post_detail.id }}; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
     };
 
     (function() { // DON'T EDIT BELOW THIS LINE

@@ -48,7 +48,7 @@ class Autor(models.Model):
         ordering = ['nombre']
 
     def __str__(self):
-        return self.nombre + self.apellidos
+        return self.nombre + ' ' + self.apellidos
 
 class Post(models.Model):
     id = models.AutoField(primary_key = True)
