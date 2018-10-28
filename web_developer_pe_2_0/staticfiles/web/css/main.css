@@ -1586,6 +1586,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .header-menu-toggle {
     position: fixed;
     right: 38px;
+    border-radius: 0px 10px 10px 0px;
     top: 24px;
     height: 42px;
     width: 42px;
@@ -1613,6 +1614,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 
 .header-menu-text {
     display: block;
+    border-radius: 10px 0px 0px 10px;
     position: absolute;
     top: 0;
     left: -70px;
@@ -1766,6 +1768,7 @@ button::-moz-focus-inner, input::-moz-focus-inner {
 .home-content__buttons .btn {
     width: 215px;
     border-color: #FFFFFF;
+    border-radius: 5px 5px 5px 5px;
     color: #FFFFFF;
     margin: 1.5rem 1.5rem 0 0;
     letter-spacing: .25rem;
@@ -2473,6 +2476,7 @@ html.no-csstransitions .home-content__main {
 .item-folio {
     position: relative;
     overflow: hidden;
+    border-radius: 5px 5px 5px 5px;
 }
 
 .item-folio__thumb img {
@@ -3044,6 +3048,7 @@ html.no-csstransitions .home-content__main {
 
 .contact-secondary::before {
     content: "";
+    border-radius: 50px;
     display: block;
     width: 35%;
     position: absolute;
@@ -3347,6 +3352,7 @@ footer .row {
 
 .footer-subscribe #mc-form input[type="email"] {
     width: 100%;
+    border-radius: 50px;
     height: 5.4rem;
     padding: 1.2rem 160px 1.2rem 60px;
     background: url(../images/email-icon.png) 20px center no-repeat, rgba(0, 0, 0, 0.1);
@@ -3384,6 +3390,7 @@ footer .row {
 
 .footer-subscribe #mc-form input[type=submit] {
     position: absolute;
+    border-radius: 50px;
     top: 0;
     right: 0;
     color: #FFFFFF;
@@ -3441,6 +3448,7 @@ footer .row {
 
 .go-top a, .go-top a:visited {
     text-decoration: none;
+    border-radius: 50px;
     border: 0 none;
     display: block;
     height: 60px;
