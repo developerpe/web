@@ -56,7 +56,19 @@ class Post(models.Model):
     slug = models.CharField('Slug', max_length = 255, blank = False, null = False)
     description = models.CharField('Descripción',max_length = 110, null = False, blank = False)
     imagen_previa = models.URLField(max_length = 255, null=False,blank=False)
-    contenido = RichTextField()
+    contenido = RichTextField(
+        extra_plugins = ['notification','mathjax'],
+        external_plugin_resources = [(
+            'notification',
+            '/static/ckeditor/ckeditor/plugins/notification/',
+            'plugin.js',
+        ),
+        (
+            'mathjax',
+            '/static/ckeditor/ckeditor/plugins/mathjax/',
+            'plugin.js',
+        )],
+    )
     autor = models.ForeignKey(Autor, on_delete = models.CASCADE)
     categoria = models.ForeignKey(Categoria, on_delete = models.CASCADE)
     comentarios = models.ManyToManyField(Comentario, blank = True)
