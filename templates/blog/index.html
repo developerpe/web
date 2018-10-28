@@ -166,14 +166,24 @@
 	</div>
 {% endblock %}
 
-<nav class="pagination pageNums is-centered " role="navigation" aria-label="pagination">
-  <ul class="pagination-list">
-		{% for page in pages %}
-    <li class="navi">
-			<a href='' class="pagination-link " value={{page}}>{{page}}</a>
-    </li>
-		{% endfor %}
-  </ul>
+<nav class="pagination is-centered ">
+    <ul class="pagination-list">
+        {% if post.has_previous %}
+					<li class="navi">
+						<a href="?page=1" class="pagination-link ">&laquo; Primera</a>
+						<a href="?page={{ post.previous_page_number }}" class="pagination-link ">Anterior</a>
+					</li>
+        {% endif %}
+        <span class="current">
+            Página {{ post.number }} de {{ post.paginator.num_pages }}.
+        </span>
+        {% if post.has_next %}
+					<li class="navi">
+						<a href="?page={{ post.next_page_number }}" class="pagination-link ">Siguiente</a>
+						<a href="?page={{ post.paginator.num_pages }}" class="pagination-link ">Última &raquo;</a>
+					</li>
+        {% endif %}
+    </ul>
 </nav>
 
 	<footer id="fh5co-footer" role="contentinfo" style="background-color: black;">
@@ -261,11 +271,6 @@
 							 return false;
 					 })
 					 $('form').submit(function(){
-							 update();
-							 return false;
-					 })
-					 $('.pageNums a').click(function(){
-							 $('#page_num').attr('value', $(this).attr('value'));
 							 update();
 							 return false;
 					 })

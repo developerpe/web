@@ -2,15 +2,20 @@ from django.shortcuts import render,HttpResponse
 from .models import *
 from django.views.generic import TemplateView
 import re
+from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 DATE_REGEX=re.compile(r'^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
 
 
 class Home_blog(TemplateView):
 	def get(self,request,*args,**kwargs):
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True
 		)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+		"""
 		num_pages = int(len(post)/6)
 		if (len(post)%6!=0):
 			num_pages += 1
@@ -22,6 +27,10 @@ class Home_blog(TemplateView):
 			'pages':pages
 		}
 		content['post'] = content['post'][0:6]
+		"""
+		content = {
+			'post':post
+		}
 		return render(request,'blog/index.html',content)
 
 def Prueba(request):
