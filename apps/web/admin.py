@@ -21,21 +21,27 @@ class ClienteResource(resources.ModelResource):
     class Meta:
         model = Cliente
 
-class ClienteAdmin(ImportExportModelAdmin):
+class ClienteAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','nombre','cargo','estado','fecha_creacion')
+    search_fields = ['nombre']
     resource_class = ClienteResource
 
 class ContactoResource(resources.ModelResource):
     class Meta:
         model = Contacto
 
-class ContactoAdmin(ImportExportModelAdmin):
+class ContactoAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','nombre','correo','asunto','fecha_creacion')
+    search_fields = ['nombre']
     resource_class = ContactoResource
 
 class SuscripcionResource(resources.ModelResource):
     class Meta:
         model = Suscripcion
 
-class SuscripcionAdmin(ImportExportModelAdmin):
+class SuscripcionAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','correo','estado','fecha_creacion')
+    search_fields = ['correo']
     resource_class = SuscripcionResource
 
 admin.site.register(Aprender,AprenderAdmin)

@@ -21,7 +21,7 @@ class Web(models.Model):
 
 	class Meta:
 		verbose_name = 'Web'
-		verbose_name = 'Webs'
+		verbose_name_plural = 'Webs'
 
 	def __str__(self):
 		return self.slogan
