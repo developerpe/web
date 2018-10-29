@@ -1,7 +1,7 @@
 from django.shortcuts import render,HttpResponse
 from .models import *
 from django.views.generic import TemplateView
-import re
+import re,random
 from django.core.paginator import EmptyPage, PageNotAnInteger, Paginator
 
 DATE_REGEX=re.compile(r'^[0-9]{4}-[0-9]{2}-[0-9]{2}$')
@@ -55,8 +55,23 @@ def Prueba(request):
 class Detail_Post(TemplateView):
 	def get(self,request,slug,*args,**kwargs):
 		post_detail = Post.objects.get(slug=slug)
+		number_post = len(Post.objects.filter(estado = True))
+		number = random.randint(1, (number_post-1))
+		if number == post_detail.id:
+			number = random.randint(1, (number_post-1))
+		print(number)
+		post_detail2 = Post.objects.get(
+			id = number
+		)
+		post_detail3 = Post.objects.get(
+			id = (number+1)
+		)
+		print(post_detail2)
+		print(post_detail3)
 		content = {
-			'post_detail':post_detail
+			'post_detail': post_detail,
+			'post_detail2': post_detail2,
+			'post_detail3': post_detail3
 		}
 		return render(request,'blog/detail_post.html',content)
 

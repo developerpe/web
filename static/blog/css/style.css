@@ -1715,4 +1715,13 @@ p{
   background-color: #343a40;
   border-color: #343a40;
 }
+@media screen and (min-width: 780px) {
+  .imagen_previa2 {
+    /*max-width: 400px;*/
+    max-height: 200px;
+  }
+}
+#fh5co-blog2{
+  clear: both;
+}
 /*# sourceMappingURL=style.css.map */

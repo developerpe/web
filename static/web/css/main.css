@@ -1621,7 +1621,24 @@ button::-moz-focus-inner, input::-moz-focus-inner {
     width: 70px;
     padding-left: 12px;
 }
-
+@media screen and (max-width: 500px) {
+  .header-menu-toggle {
+      position: fixed;
+      right: 38px;
+      border-radius: 10px 10px 10px 10px;
+      top: 24px;
+      height: 42px;
+      width: 42px;
+      line-height: 42px;
+      font-family: "montserrat-medium", sans-serif;
+      font-size: 1.3rem;
+      text-transform: uppercase;
+      letter-spacing: .3rem;
+      color: #ff7f50;
+      -webkit-transition: all 0.5s ease-in-out;
+      transition: all 0.5s ease-in-out;
+  }
+}
 .header-menu-icon {
     display: block;
     width: 22px;
