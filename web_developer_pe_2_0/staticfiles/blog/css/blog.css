@@ -11381,7 +11381,7 @@ label {
   .main-raised {
     margin-left: 10px;
     margin-right: 10px;
-    margin-top: 150px;
+    margin-top: -150px;
   }
 }
 
@@ -11416,7 +11416,7 @@ label {
     display: none;
   }
   .main.main-raised {
-    margin-top: -30px;
+    margin-top: -130px;
   }
   .form-group.is-focused .bootstrap-datetimepicker-widget {
     left: -32px !important;

@@ -129,9 +129,9 @@
         <p class="text-center subtitulo"><strong>Sigue leyendo</strong></p>
       </div>
 			<div class="columns is-multiline" id="cuerpo">
-				<div class="column is-half" >
+				<div class="column is-one-third" >
 					<div class="fh5co-blog" id="cambio">
-						<div class="is-half imagen_previa2">
+						<div class="is-one-third imagen_previa2">
 							<a href="{% url 'detail_post' post_detail2.slug %}" class="pagination-helper"><img class="img-responsive" src="{{ post_detail2.imagen_previa }}" alt=""></a>
 						</div>
 							<div class="blog-text">
@@ -147,9 +147,9 @@
 							</div>
 					</div>
 				</div>
-        <div class="column is-half" >
+        <div class="column is-one-third" >
           <div class="fh5co-blog" id="cambio">
-            <div class="is-half imagen_previa2">
+            <div class="is-one-third imagen_previa2">
               <a href="{% url 'detail_post' post_detail3.slug %}" class="pagination-helper"><img class="img-responsive" src="{{ post_detail3.imagen_previa }}" alt=""></a>
             </div>
               <div class="blog-text">
@@ -161,6 +161,24 @@
                 <p>{{ post_detail3.description }}</p>
                 <div class="text-center">
                   <a href="{% url 'detail_post' post_detail3.slug %}" class="btn dark leer_mas">Leer más</a>
+                </div>
+              </div>
+          </div>
+        </div>
+        <div class="column is-one-third" >
+          <div class="fh5co-blog" id="cambio">
+            <div class="is-one-third imagen_previa2">
+              <a href="{% url 'detail_post' post_detail4.slug %}" class="pagination-helper"><img class="img-responsive" src="{{ post_detail4.imagen_previa }}" alt=""></a>
+            </div>
+              <div class="blog-text">
+                <h7 style="color:red;" class="category">#{{ post_detail4.categoria }}</h7>
+                <h6>
+                  <a href="{% url 'detail_post' post_detail4.slug %}" class="pagination-helper" style="color:black;"><strong>{{ post_detail4.titulo }}</strong></a>
+                </h6>
+                <h7 class="date">{{ post_detail4.fecha_creacion }}</h7>
+                <p>{{ post_detail4.description }}</p>
+                <div class="text-center">
+                  <a href="{% url 'detail_post' post_detail4.slug %}" class="btn dark leer_mas">Leer más</a>
                 </div>
               </div>
           </div>

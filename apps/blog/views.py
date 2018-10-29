@@ -55,23 +55,41 @@ def Prueba(request):
 class Detail_Post(TemplateView):
 	def get(self,request,slug,*args,**kwargs):
 		post_detail = Post.objects.get(slug=slug)
-		number_post = len(Post.objects.filter(estado = True))
-		number = random.randint(1, (number_post-1))
-		if number == post_detail.id:
-			number = random.randint(1, (number_post-1))
-		print(number)
+		all_post = Post.objects.filter(estado = True)
+		all_post_list = []
+		number = 0
+		number2 = 0
+		number3 = 0
+		for p in all_post:
+			if p.id != post_detail.id:
+				all_post_list.append(p.id)
+
+		for i in all_post_list:
+			temp_number = random.choice(all_post_list)
+			temp_number2 = random.choice(all_post_list)
+			if number2 == number:
+				number2 = random.choice(all_post_list)
+			temp_number3 = random.choice(all_post_list)
+			if temp_number != temp_number2 and temp_number != temp_number3:
+				number = temp_number
+			if temp_number2 != temp_number and temp_number2 != temp_number:
+				number2 = temp_number2
+			if temp_number3 != temp_number and temp_number3 != temp_number2:
+				number3 = temp_number3
 		post_detail2 = Post.objects.get(
 			id = number
 		)
 		post_detail3 = Post.objects.get(
-			id = (number+1)
+			id = number2
 		)
-		print(post_detail2)
-		print(post_detail3)
+		post_detail4 = Post.objects.get(
+			id = number3
+		)
 		content = {
 			'post_detail': post_detail,
 			'post_detail2': post_detail2,
-			'post_detail3': post_detail3
+			'post_detail3': post_detail3,
+			'post_detail4': post_detail4
 		}
 		return render(request,'blog/detail_post.html',content)
 
