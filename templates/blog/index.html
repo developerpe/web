@@ -166,21 +166,19 @@
 	</div>
 {% endblock %}
 
-<nav class="pagination is-centered ">
+<nav class="pagination is-centered">
     <ul class="pagination-list">
+			<span class="pagination-link">
+					Página {{ post.number }} de {{ post.paginator.num_pages }}.
+			</span>
         {% if post.has_previous %}
 					<li class="navi">
-						<a href="?page=1" class="pagination-link ">&laquo; Primera</a>
-						<a href="?page={{ post.previous_page_number }}" class="pagination-link ">Anterior</a>
+						<a href="?page={{ post.previous_page_number }}" class="pagination-previous">Anterior</a>
 					</li>
         {% endif %}
-        <span class="current">
-            Página {{ post.number }} de {{ post.paginator.num_pages }}.
-        </span>
         {% if post.has_next %}
 					<li class="navi">
-						<a href="?page={{ post.next_page_number }}" class="pagination-link ">Siguiente</a>
-						<a href="?page={{ post.paginator.num_pages }}" class="pagination-link ">Última &raquo;</a>
+						<a href="?page={{ post.next_page_number }}" class="pagination-next">Siguiente</a>
 					</li>
         {% endif %}
     </ul>

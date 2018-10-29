@@ -15,24 +15,24 @@ class Home_blog(TemplateView):
 		paginator = Paginator(posts, 6)
 		page = request.GET.get('page')
 		post = paginator.get_page(page)
-		"""
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
-		content = {
-			'post':post,
-			'pages':pages
-		}
-		content['post'] = content['post'][0:6]
-		"""
+
 		content = {
 			'post':post
 		}
 		return render(request,'blog/index.html',content)
-
+	"""
+	num_pages = int(len(post)/6)
+	if (len(post)%6!=0):
+		num_pages += 1
+	pages = []
+	for i in range(1, num_pages+1):
+		pages.append(i)
+	content = {
+		'post':post,
+		'pages':pages
+	}
+	content['post'] = content['post'][0:6]
+	"""
 def Prueba(request):
 	if(request.method!='POST'):
 		return HttpResponse('404 NON FOUND')
@@ -85,21 +85,17 @@ def Prueba_movil(request):
 class Blog_movil(TemplateView):
 	def get(self,request,*args,**kwargs):
 		categoria = Categoria.objects.get(nombre = 'Movil')
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True,
 			categoria = categoria
 		)
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+
 		content = {
-			'post':post,
-			'pages':pages
+			'post':post
 		}
-		content['post'] = content['post'][0:6]
 		return render(request,'blog/movil.html',content)
 
 def Prueba_general(request):
@@ -127,21 +123,17 @@ def Prueba_general(request):
 class Blog_general(TemplateView):
 	def get(self,request,*args,**kwargs):
 		categoria = Categoria.objects.get(nombre = 'General')
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True,
 			categoria = categoria
 		)
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+
 		content = {
-			'post':post,
-			'pages':pages
+			'post':post
 		}
-		content['post'] = content['post'][0:6]
 		return render(request,'blog/generales.html',content)
 
 def Prueba_tecnologia(request):
@@ -168,21 +160,17 @@ def Prueba_tecnologia(request):
 class Blog_tecnologia(TemplateView):
 	def get(self,request,*args,**kwargs):
 		categoria = Categoria.objects.get(nombre = 'Tecnologia')
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True,
 			categoria = categoria
 		)
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+
 		content = {
-			'post':post,
-			'pages':pages
+			'post':post
 		}
-		content['post'] = content['post'][0:6]
 		return render(request,'blog/tecnologia.html',content)
 
 def Prueba_programacion(request):
@@ -209,21 +197,17 @@ def Prueba_programacion(request):
 class Blog_programacion(TemplateView):
 	def get(self,request,*args,**kwargs):
 		categoria = Categoria.objects.get(nombre = 'Programacion')
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True,
 			categoria = categoria
 		)
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+
 		content = {
-			'post':post,
-			'pages':pages
+			'post':post
 		}
-		content['post'] = content['post'][0:6]
 		return render(request,'blog/programacion.html',content)
 
 def Prueba_videojuegos(request):
@@ -251,21 +235,17 @@ def Prueba_videojuegos(request):
 class Blog_videojuegos(TemplateView):
 	def get(self,request,*args,**kwargs):
 		categoria = Categoria.objects.get(nombre = 'Videojuegos')
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True,
 			categoria = categoria
 		)
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+
 		content = {
-			'post':post,
-			'pages':pages
+			'post':post
 		}
-		content['post'] = content['post'][0:6]
 		return render(request,'blog/videojuegos.html',content)
 
 def Prueba_tutoriales(request):
@@ -292,19 +272,15 @@ def Prueba_tutoriales(request):
 class Blog_tutoriales(TemplateView):
 	def get(self,request,*args,**kwargs):
 		categoria = Categoria.objects.get(nombre = 'Tutoriales')
-		post = Post.objects.filter(
+		posts = Post.objects.filter(
 			estado = True,
 			categoria = categoria
 		)
-		num_pages = int(len(post)/6)
-		if (len(post)%6!=0):
-			num_pages += 1
-		pages = []
-		for i in range(1, num_pages+1):
-			pages.append(i)
+		paginator = Paginator(posts, 6)
+		page = request.GET.get('page')
+		post = paginator.get_page(page)
+
 		content = {
-			'post':post,
-			'pages':pages
+			'post':post
 		}
-		content['post'] = content['post'][0:6]
 		return render(request,'blog/tutoriales.html',content)
