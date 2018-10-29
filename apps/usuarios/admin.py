@@ -7,7 +7,8 @@ class UserResource(resources.ModelResource):
     class Meta:
         model = User
 
-class UserAdmin(ImportExportModelAdmin):
+class UserAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','username','email','first_name','last_name','editor','is_active')
     resource_class = UserResource
 
 admin.site.register(User,UserAdmin)

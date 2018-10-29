@@ -7,14 +7,16 @@ class CategoriaResource(resources.ModelResource):
     class Meta:
         model = Categoria
 
-class CategoriaAdmin(ImportExportModelAdmin):
+class CategoriaAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','nombre','estado','fecha_creacion')
     resource_class = CategoriaResource
 
 class AutorResource(resources.ModelResource):
     class Meta:
         model = Autor
 
-class AutorAdmin(ImportExportModelAdmin):
+class AutorAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','nombre','apellidos','estado','correo','facebook','twitter','fecha_creacion')
     resource_class = AutorResource
 
 class PersonaResource(resources.ModelResource):
@@ -28,7 +30,8 @@ class PostResource(resources.ModelResource):
     class Meta:
         model = Post
 
-class PostAdmin(ImportExportModelAdmin):
+class PostAdmin(ImportExportModelAdmin,admin.ModelAdmin):
+    list_display = ('id','titulo','slug','autor','categoria','estado','fecha_creacion')
     resource_class = PostResource
 
 admin.site.register(Categoria,CategoriaAdmin)
