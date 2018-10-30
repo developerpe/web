@@ -31,6 +31,15 @@
   })(window,document,'script','dataLayer','GTM-MG9TQXG');</script>
   <!-- End Google Tag Manager -->
 
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:site" content="@developerpepiur">
+  <meta name="twitter:title" content="{{ post_detail.titulo }}">
+  <meta name="twitter:description" content="{{ post_detail.description }}">
+  <meta name="twitter:creator" content="@developerpepiur">
+  <meta name="twitter:image" content="{{ post_detail.imagen_previa }}">
+  <!-- Twitter summary card with large image must be at least 280x150px -->
+  <meta name="twitter:image:src" content="{{ post_detail.imagen_previa }}">
+
   <!-- Schema.org markup for Google+ -->
   <meta itemprop="name" content="{{ post_detail.titulo }}">
   <meta itemprop="description" content="{{ post_detail.description }}">
