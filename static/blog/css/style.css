@@ -1724,4 +1724,14 @@ p{
 #fh5co-blog2{
   clear: both;
 }
+.re-modal{
+    background-color: #f8f9fa;
+    margin-top: 30px;
+}
+
+@media screen and (max-width: 450px) {
+  .modificado{
+    margin-left: 50px;
+  }
+}
 /*# sourceMappingURL=style.css.map */

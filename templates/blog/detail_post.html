@@ -59,6 +59,7 @@
   <link rel="stylesheet" href="{% static 'blog/css/owl.theme.default.min.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/style.css' %}">
   <link rel="stylesheet" href="{% static 'blog/css/bulma.min.css' %}">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
   <script src="{% static 'blog/js/modernizr-2.6.2.min.js' %}"></script>
   <link href="{% static 'blog/css/blog.css' %}" rel="stylesheet" />
   <link rel="icon" href="{% static 'web/logo.png' %}" type="image/png">
@@ -181,6 +182,60 @@
 			</div>
 		</div>
 	</div>
+
+  <div class="modal" id="Suscripcion">
+    <div class="modal-background"></div>
+    <div class="modal-card">
+      <header class="modal-card-head">
+        <p class="modal-card-title">Suscríbete a nuestro Blog!</p>
+        <button class="delete" aria-label="close"></button>
+      </header>
+      <section class="modal-card-body">
+        <form id="mc-form" method="POST">{% csrf_token %}
+            <div class="field">
+              <p class="control has-icons-left has-icons-right">
+                <input class="input" type="email" id="mc-email" placeholder="Email" name="correo">
+                <span class="icon is-small is-left">
+                  <i class="fas fa-envelope"></i>
+                </span>
+                <span class="icon is-small is-right">
+                  <i class="fas fa-check"></i>
+                </span>
+              </p>
+            </div>
+            <div class="container">
+              <div class="columns is-multiline is-12">
+                <div class="column is-3">
+                </div>
+                <div class="column is-9" style="margin-top:10px;">
+                  <div class="modificado">
+                    <button type="submit" class="button is-success" name="subscribe" id="subscribe" value="Subscríbete">
+                      <span class="icon is-small">
+                        <i class="fas fa-check"></i>
+                      </span>
+                      <span>Suscribirse</span>
+                    </button>
+                    <button class="button is-danger is-outlined">
+                      <span id="cerrar">Cancelar</span>
+                      <span class="icon is-small">
+                        <i class="fas fa-times"></i>
+                      </span>
+                    </button>
+                  </div>
+                </div>
+                <div class="container">
+                  <div class="columns is-12" style="margin-top:10px;">
+                    <label for="mc-email" class="subscribe-message" ><strong><p id="message"></p></strong></label>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </section>
+      </form>
+    </div>
+  </div>
+
+
   <div id="disqus_thread" class="container"></div>
     <script>
 
@@ -241,7 +296,9 @@
   <script src="{% static 'blog/js/jquery.countTo.js' %}"></script>
   <script src="{% static 'blog/js/jquery.magnific-popup.min.js' %}"></script>
   <script src="{% static 'blog/js/magnific-popup-options.js' %}"></script>
+  <script src="{% static 'web/js/DjangoAjax.js' %}"></script>
   <script src="{% static 'blog/js/main.js' %}"></script>
+  <script src="{% static 'blog/js/suscription.js' %}"></script>
 </body>
 
 </html>
