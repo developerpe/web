@@ -1739,4 +1739,9 @@ p{
     margin-left: 100px;
   }
 }
+@media screen and (max-width: 402px) {
+  .modificado{
+
+  }
+}
 /*# sourceMappingURL=style.css.map */
